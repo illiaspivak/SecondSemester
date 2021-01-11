@@ -9,8 +9,10 @@ public class Main {
         int n = scanner.nextInt();
         String a = "BBALASTBALASTRBALASTABALASTBALASTBALASTTBALASTBALASTIBALASTBALASTBALASTSLBALASTBALASTBALASTABALASTBALASTVBALASTBALASTA";
         String b = "BALAST";
+        String c = "BALASTBBABALASTLASTALASBALASTBALBALASTASTTSBALASTTABILIBALASTBALASTTABALASBALASTT";
         System.out.println("najviac delitelov ma cislo: " + Deliteli(n));
         Heslo("Heso: "+ a,b);
+        VnorenyBalast("Heso: "+c,b);
 
     }
 
@@ -44,5 +46,19 @@ public class Main {
     public static void Heslo (String a, String b){
             String newStr = a.replaceAll(b, "");
             System.out.println(newStr);
+    }
+
+    /**
+     *Odstráňte z nasledujúceho reťazca všetok BALAST.
+     *Pozor, BALAST môže byť vnorený, napríklad BABALASTLAST
+     *(najprv odstránime BALAST od druhej pozície ďalej a vznikne nám nový BALAST,
+     * ktorý rovnako odstránime).
+     */
+    public static void VnorenyBalast (String a, String b){
+        for(int i=0; i<a.length(); i++) {
+            String c = a.replaceAll(b, "");
+            a = c;
+        }
+        System.out.println(a);
     }
 }

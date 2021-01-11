@@ -6,8 +6,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Enter a number:");
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        System.out.println("najviac delitelov ma cislo: " + Deliteli(n));
+        //int n = scanner.nextInt();
+        String a = "BBALASTBALASTRBALASTABALASTBALASTBALASTTBALASTBALASTIBALASTBALASTBALASTSLBALASTBALASTBALASTABALASTBALASTVBALASTBALASTA";
+        String b = "BALAST";
+        //System.out.println("najviac delitelov ma cislo: " + Deliteli(n));
+        Heslo("Heso: "+ a,b);
+
     }
 
     /**
@@ -32,6 +36,13 @@ public class Main {
             a=0;
         }
         return c;
+    }
 
+    /**
+     *Odstráňte z nasledujúceho reťazca všetok BALAST a dostanete heslo.
+     */
+    public static void Heslo (String a, String b){
+            String newStr = a.replaceAll(b, "");
+            System.out.println(newStr);
     }
 }

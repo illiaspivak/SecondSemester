@@ -6,10 +6,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Enter a number:");
         Scanner scanner = new Scanner(System.in);
-        //int n = scanner.nextInt();
+        int n = scanner.nextInt();
         String a = "BBALASTBALASTRBALASTABALASTBALASTBALASTTBALASTBALASTIBALASTBALASTBALASTSLBALASTBALASTBALASTABALASTBALASTVBALASTBALASTA";
         String b = "BALAST";
-        //System.out.println("najviac delitelov ma cislo: " + Deliteli(n));
+        System.out.println("najviac delitelov ma cislo: " + Deliteli(n));
         Heslo("Heso: "+ a,b);
 
     }

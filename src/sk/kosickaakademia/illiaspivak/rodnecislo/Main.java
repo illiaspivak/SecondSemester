@@ -1,4 +1,7 @@
 package sk.kosickaakademia.illiaspivak.rodnecislo;
+
+import java.util.Scanner;
+
 /**
  *Kontrola natívneho čísla
  * 1. Prvé dvojčíslie rodného čísla vyjadruje posledné dve číslice roku narodenia osoby
@@ -16,6 +19,9 @@ package sk.kosickaakademia.illiaspivak.rodnecislo;
 public class Main {
     public static void main(String[] args) {
         PersonalID p = new PersonalID();
-        System.out.println(p.checkId("566231/1240"));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zadať rodné číslo: ");
+        String rodnecislo = scanner.nextLine();
+        System.out.println(p.checkId(rodnecislo));
     }
 }

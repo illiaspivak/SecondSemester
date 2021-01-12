@@ -6,7 +6,7 @@ public class PersonalID {
     public boolean checkId(String id) {
         /*String musi mat rozmer od 9 az 11*/
         if(id.length()<9||id.length()>11){
-            System.out.println("Chyba! Rodné číslo nie je spravne");
+            System.out.println("Chyba! Rodné číslo je príliš veľké alebo príliš malé");
             return false;
         }
         int cDigits = 0; //pocet cislic
@@ -21,10 +21,12 @@ public class PersonalID {
         }
         if(id.length()==11 && ( cDigits!=10 || id.charAt(6)!='/')){
             System.out.println("Chyba! Rodné číslo nie je spravne");
+            System.out.println("Možno lomítko je na zlom mieste.");
             return false;
         }
         if(id.length()==10 && cDigits==9 && id.charAt(6)!='/'){
             System.out.println("Chyba! Rodné číslo nie je spravne");
+            System.out.println("Možno lomítko je na zlom mieste.");
             return false;
         }
         /*Kontrola pohlavia osoby*/
@@ -45,6 +47,8 @@ public class PersonalID {
         day=Integer.parseInt(id.substring(4,6));
         month=Integer.parseInt(id.substring(2,4));
         year=Integer.parseInt(id.substring(0,2));
+        int number = Integer.parseInt(newID.substring(6,9));
+        System.out.println("Mate poradove cislo: "+ number);
         if(id.charAt(2)=='5' || id.charAt(2)=='6')
             month=month-50;
         year=2000+year;
@@ -82,12 +86,98 @@ public class PersonalID {
         }else{
             return false;
         }
-
-
-
-
-
-
+        int priestupnyRok;
+        if(year%4==0)
+            priestupnyRok=1;
+        else
+            priestupnyRok=0;
+        switch (month) {
+            case 1:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 2:
+                if ((day > 0 && day < 29 && priestupnyRok==0)||(day > 0 && day < 28 && priestupnyRok==1) ) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 3:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 4:
+                if (day > 0 && day < 31) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 5:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 6:
+                if (day > 0 && day < 31) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 7:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 8:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 9:
+                if (day > 0 && day < 31) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 10:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 11:
+                if (day > 0 && day < 31) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+            case 12:
+                if (day > 0 && day < 32) {
+                } else{
+                    System.out.println("Chyba! Rodné číslo nie je spravne");
+                    return false;
+                }
+                break;
+        }
+        System.out.println("Rodné číslo je spravne");
         return true;
     }
 

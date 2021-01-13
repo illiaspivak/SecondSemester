@@ -1,9 +1,9 @@
 package sk.kosickaakademia.illiaspivak.rodnecislo;
 
-import java.time.DateTimeException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.Formatter;
+
 import org.joda.time.DateTime;
 
 
@@ -187,27 +187,46 @@ public class PersonalID {
         DateTime date = new DateTime(year, month, day, 0, 0, 0);
         switch (date.getDayOfWeek()) {
             case 1:
-                System.out.println("Pondelok");
+                System.out.println("Deň narodenia: Pondelok");
                 break;
             case 2:
-                System.out.println("Utorok");
+                System.out.println("Deň narodenia: Utorok");
                 break;
             case 3:
-                System.out.println("Streda");
+                System.out.println("Deň narodenia: Streda");
                 break;
             case 4:
-                System.out.println("Štvrtok");
+                System.out.println("Deň narodenia: Štvrtok");
                 break;
             case 5:
-                System.out.println("Piatok");
+                System.out.println("Deň narodenia: Piatok");
                 break;
             case 6:
-                System.out.println("Sobota");
+                System.out.println("Deň narodenia: Sobota");
                 break;
             case 7:
-                System.out.println("Nedeľa");
+                System.out.println("Deň narodenia: Nedeľa");
                 break;
         }
+        Date dateX = new Date();
+        Calendar currentCalendar = Calendar.getInstance();
+        currentCalendar.setTime(dateX);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(dateX);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.add(Calendar.MONTH, month-1);
+        long diff = currentCalendar.getTimeInMillis() - calendar.getTimeInMillis();
+        long seconds = diff / 1000;
+        long minutes = seconds / 60;
+        long hours = minutes / 60;
+        long days = hours / 24;
+
+        System.out.println(days + " dni je daná osoba na svete");
 
 
 
@@ -215,6 +234,5 @@ public class PersonalID {
 
         return true;
     }
-
 
 }

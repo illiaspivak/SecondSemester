@@ -14,6 +14,17 @@ import java.util.Scanner;
  *    pritom celé desaťmiestne rodné číslo musí byť bezo zvyšku deliteľné číslom 11.
  * 9. Do 1985 roku ak je zbytok po delení deväťmiestneho čísla rovný desať,
  *    ako kontrolná číslica sa použije nula (a celé rodné číslo potom delitelné jedenástimi nie je) FSÚ Č. Vk. 2898/1985
+ *
+ * Deň narodenia
+ * Koľko dni je daná osoba na svete
+ *
+ * Dôchodkový vek
+ * 1.Od 1. januára 2020 je dôchodkový vek pevne určený v prílohách zákona
+ * o sociálnom poistení pre všetky skupiny poistencov v členení na ročníky,
+ * pohlavie a počet vychovaných detí
+ * 64 roky - Tento vek odchodu do dôchodku je určený pre mužov a ženy,
+ * s rokom narodenia 1966 a viac p (podľa zákona o sociálnom poistení)
+ * Priemer, ak je rok narodenia 1965 alebo menej: 62 rokov pre mužov a 58 pre ženy
  */
 
 public class Main {

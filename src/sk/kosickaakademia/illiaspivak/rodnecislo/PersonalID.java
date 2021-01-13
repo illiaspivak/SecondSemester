@@ -227,6 +227,35 @@ public class PersonalID {
         long days = hours / 24;
 
         System.out.println(days + " dni je daná osoba na svete");
+        if(year>1965){
+            int yearD = year + 64;
+            if(currYear-year>64) {
+                System.out.println("Táto osoba odišla do dôchodku po " + day + "-" + month + "-" + yearD);
+            }else {
+                System.out.println("Táto osoba môže odísť do dôchodku po: " + day + "-" + month + "-" + yearD);
+            }
+        }else{
+            if(id.charAt(2)=='5' || id.charAt(2)=='6'){
+                int yearD = year + 58;
+                if(currYear-year>64) {
+                    System.out.println("Táto osoba odišla do dôchodku po " + day + "-" + month + "-" + yearD);
+                }else {
+                    System.out.println("Táto osoba môže odísť do dôchodku po: " + day + "-" + month + "-" + yearD);
+                }
+            }else{
+                int yearD = year + 62;
+                if(currYear-year>64) {
+                    System.out.println("Táto osoba odišla do dôchodku po " + day + "-" + month + "-" + yearD);
+                }else {
+                    System.out.println("Táto osoba môže odísť do dôchodku po: " + day + "-" + month + "-" + yearD);
+                }
+            }
+
+        }
+
+
+
+
 
 
 

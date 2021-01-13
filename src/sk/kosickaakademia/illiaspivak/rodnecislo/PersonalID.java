@@ -1,6 +1,12 @@
 package sk.kosickaakademia.illiaspivak.rodnecislo;
 
+import java.time.DateTimeException;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import org.joda.time.DateTime;
+
+
 
 public class PersonalID {
     public boolean checkId(String id) {
@@ -178,6 +184,35 @@ public class PersonalID {
                 break;
         }
         System.out.println("Rodné číslo je spravne");
+        DateTime date = new DateTime(year, month, day, 0, 0, 0);
+        switch (date.getDayOfWeek()) {
+            case 1:
+                System.out.println("Pondelok");
+                break;
+            case 2:
+                System.out.println("Utorok");
+                break;
+            case 3:
+                System.out.println("Streda");
+                break;
+            case 4:
+                System.out.println("Štvrtok");
+                break;
+            case 5:
+                System.out.println("Piatok");
+                break;
+            case 6:
+                System.out.println("Sobota");
+                break;
+            case 7:
+                System.out.println("Nedeľa");
+                break;
+        }
+
+
+
+
+
         return true;
     }
 

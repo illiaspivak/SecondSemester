@@ -1,5 +1,6 @@
 package sk.kosickaakademia.illiaspivak.rodnecislo;
 
+import sk.kosickaakademia.illiaspivak.rodnecislo.Den;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
@@ -184,30 +185,8 @@ public class PersonalID {
                 break;
         }
         System.out.println("Rodné číslo je spravne");
-        DateTime date = new DateTime(year, month, day, 0, 0, 0);
-        switch (date.getDayOfWeek()) {
-            case 1:
-                System.out.println("Deň narodenia: Pondelok");
-                break;
-            case 2:
-                System.out.println("Deň narodenia: Utorok");
-                break;
-            case 3:
-                System.out.println("Deň narodenia: Streda");
-                break;
-            case 4:
-                System.out.println("Deň narodenia: Štvrtok");
-                break;
-            case 5:
-                System.out.println("Deň narodenia: Piatok");
-                break;
-            case 6:
-                System.out.println("Deň narodenia: Sobota");
-                break;
-            case 7:
-                System.out.println("Deň narodenia: Nedeľa");
-                break;
-        }
+        System.out.println("Deň narodenia: " + Den.DenN(year,month,day));
+
         Date dateX = new Date();
         Calendar currentCalendar = Calendar.getInstance();
         currentCalendar.setTime(dateX);
@@ -263,5 +242,6 @@ public class PersonalID {
 
         return true;
     }
+
 
 }
